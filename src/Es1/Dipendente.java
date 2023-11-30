@@ -106,11 +106,18 @@ public class Dipendente {
         }
         return livello;
     }
-    public static void calcolaPaga(Dipendente nomeDelDipendente){
+
+    public static void calcolaPaga(Dipendente nomeDelDipendente) {
         System.out.println("Il dipendente numero matricola: " + " " + nomeDelDipendente.matricola + " " + "percipisce mensilmente" + " " + nomeDelDipendente.stipendio + " euro");
     }
-    public static void calcolaPaga(Dipendente nomeDelDipendente, int oreDiStraordinatio){
+
+    public static void calcolaPaga(Dipendente nomeDelDipendente, int oreDiStraordinatio) {
         double PagaTotale = nomeDelDipendente.stipendio + (oreDiStraordinatio * nomeDelDipendente.importoOrarioStraordinario);
-        System.out.println("Il dipendente numero matricola: " + " " + nomeDelDipendente.matricola + " " + "percipisce mensilmente con le ore di stra" + " " + PagaTotale + " euro");
+        System.out.println("Il dipendente numero matricola: " +
+                " " + nomeDelDipendente.matricola +
+                " " + "percipisce mensilmente con " + oreDiStraordinatio +
+                " " + " ore extraordinarie" +
+                " " + "L'importo Lordo di:" +
+                " " + +PagaTotale + " euro");
     }
 }
