@@ -1,4 +1,4 @@
-package Es1;
+package Es1.entities;
 
 public enum Dipartimento {
     PRODUZIONE,

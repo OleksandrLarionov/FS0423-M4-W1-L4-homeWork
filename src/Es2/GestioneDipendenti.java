@@ -1,8 +1,8 @@
 package Es2;
 
-import Es1.Dipartimento;
-import Es1.Dipendente;
-import Es1.Livello;
+import Es1.entities.Dipartimento;
+import Es1.entities.Dipendente;
+import Es1.entities.Livello;
 
 public class GestioneDipendenti {
     public static void main(String[] args) {
@@ -14,9 +14,6 @@ public class GestioneDipendenti {
         //Promozioni
         dipendenteAmministrativo.promuovi();
         dipendenteOperaio1.promuovi();
-        //Aggiorno gli stipendi
-        dipendenteAmministrativo.aggiorna();
-        dipendenteOperaio1.aggiorna();
         //Stampa a video i dati dei dipendenti
         System.out.println(dipendenteDirigente);
         System.out.println(dipendenteAmministrativo);
@@ -28,9 +25,10 @@ public class GestioneDipendenti {
         Dipendente.calcolaPaga(dipendenteOperaio1, 5);
         Dipendente.calcolaPaga(dipendenteOperaio2, 5);
 
-        System.out.println("L'azienda paga agli dipendenti:" + " " + sumStipendiDipendenti( dipendenteDirigente, dipendenteAmministrativo, dipendenteOperaio1, dipendenteOperaio2) + " " + "euro");
+        System.out.println("L'azienda paga agli dipendenti:" + " " + sumStipendiDipendenti(dipendenteDirigente, dipendenteAmministrativo, dipendenteOperaio1, dipendenteOperaio2) + " " + "euro");
     }
-    public static double sumStipendiDipendenti (Dipendente d1, Dipendente d2, Dipendente d3, Dipendente d4){
+
+    public static double sumStipendiDipendenti(Dipendente d1, Dipendente d2, Dipendente d3, Dipendente d4) {
         return d1.getStipendio() + d2.getStipendio() + d3.getStipendio() + d4.getStipendio();
     }
 }

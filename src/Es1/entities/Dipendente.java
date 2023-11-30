@@ -1,7 +1,7 @@
-package Es1;
+package Es1.entities;
 
 public class Dipendente {
-    public static double stipendioBase = 1000;
+    public static final double stipendioBase = 1000;
 
     private String matricola;
     private double stipendio;
@@ -68,40 +68,36 @@ public class Dipendente {
                 '}';
     }
 
+    public void datiDipendente() {
+        System.out.println("Dipendente" +
+                "matricola='" + matricola + '\'' +
+                ", stipendio=" + stipendio + " " + "euro" + " " +
+                ", importoOrarioStraordinario=" + importoOrarioStraordinario + " " + "euro" + " " +
+                ", livello=" + livello +
+                ", dipartimento=" + dipartimento
+        );
+    }
+
     // metodo promuovi
-    public void promuovi() {
+    public Livello promuovi() {
         switch (livello) {
             case OPERAIO:
                 livello = Livello.IMPIEGATO;
+                stipendio = stipendioBase * 1.2;
                 break;
             case IMPIEGATO:
                 livello = Livello.QUADRO;
+                stipendio = stipendioBase * 1.5;
                 break;
             case QUADRO:
                 livello = Livello.DIRIGENTE;
+                stipendio = stipendioBase * 2;
                 break;
             case DIRIGENTE:
                 System.out.println("Il dipendente è già un dirigente. Promozione non possibile.");
                 break;
             default:
                 System.out.println("E' Morfeo! non lavora qui!");
-                break;
-        }
-    }
-
-    public Livello aggiorna() {
-        switch (livello) {
-            case IMPIEGATO:
-                stipendio = stipendioBase * 1.2;
-                break;
-            case QUADRO:
-                stipendio = stipendioBase * 1.5;
-                break;
-            case DIRIGENTE:
-                stipendio = stipendioBase * 2;
-                break;
-            default:
-                System.out.println("STRA Non Pagati per tutti!");
                 break;
         }
         return livello;
